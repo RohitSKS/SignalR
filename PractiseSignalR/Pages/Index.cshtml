@@ -1,0 +1,75 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    Hello !
+</div>
+<div id="MsgFromHub"></div>
+
+@section scripts{
+    <script>
+        (function () {
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/signalhub")
+                .configureLogging(signalR.LogLevel.Information)
+                .build();
+
+            connection.start()
+                .then(function () {
+                    connection.invoke("Announce", "vinod", "Hello");
+                });
+            connection.on("ReceiveMessage", (user, message) => {
+                $('#MsgFromHub').text("Welcome " + user + " and  message is : " + message);
+            });
+        })()
+        
+
+    </script>
+}
+
+@*@section scripts{
+          <script>alert("Hey It works..");
+              const connection = new signalR.HubConnectionBuilder()
+                  .withUrl("/signalhub")
+                  .configureLogging(signalR.LogLevel.Information)
+                  .build();
+
+              connection.start().then(() =>
+              {
+                  connection.invoke("Announce", "Vinod", "Hello").catch(err => console.error(err.toString()))
+              }
+              );
+
+              connection.on("ReceiveMessage", (user, message) => {
+                  const encodedMsg = user + " says " + message;
+                  const li = document.createElement("li");
+                  li.textContent = encodedMsg;
+                  //document.getElementById("messagesList").appendChild(li);
+                  alert(encodedMsg);
+              });
+
+              //document.getElementById("sendButton").addEventListener("click", event => {
+              //    const user = document.getElementById("userInput").value;
+              //    const message = document.getElementById("messageInput").value;
+
+              //    event.preventDefault();
+              //});
+
+              async function start() {
+                  try {
+                      await connection.start();
+                      console.log("connected");
+                  } catch (err) {
+                      console.log(err);
+                      setTimeout(() => start(), 5000);
+                  }
+              };
+
+              connection.onclose(async () => {
+                  await start();
+              });
+        </script>
+    }*@

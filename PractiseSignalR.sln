@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PractiseSignalR", "PractiseSignalR\PractiseSignalR.csproj", "{53C61715-E674-4AF7-9282-1374CFF83C8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53C61715-E674-4AF7-9282-1374CFF83C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C61715-E674-4AF7-9282-1374CFF83C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C61715-E674-4AF7-9282-1374CFF83C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C61715-E674-4AF7-9282-1374CFF83C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9126AEF0-93D3-4AD2-BB55-C5A7F17DDA6C}
+	EndGlobalSection
+EndGlobal
