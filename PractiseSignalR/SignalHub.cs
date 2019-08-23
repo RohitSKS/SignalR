@@ -12,6 +12,7 @@ namespace PractiseSignalR
         {
             Clients.All.SendAsync("ReceiveMessage", user, message);
         }
+        //https://codeopinion.com/practical-asp-net-core-signalr-server-hubs/
     }
 
 }
